@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 extension Song {
+    @discardableResult // IDK why, but Karl said to. This is for the song init and the result not being used
     convenience init(songName: String, artistName: String, playlist: Playlist, moc: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: moc)
         self.songName = songName
